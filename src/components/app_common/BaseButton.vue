@@ -1,7 +1,8 @@
 <template>
   <q-btn dense no-caps unelevated class="btn btn--color">
     <div class="flex no-wrap items-center">
-      <img class="btn--icon" src="~assets/icons/box.svg" svg-inline />
+      <img class="btn--icon" src="~assets/icons/box.svg" />
+      <p class="btn--text"><slot></slot></p>
     </div>
   </q-btn>
 </template>

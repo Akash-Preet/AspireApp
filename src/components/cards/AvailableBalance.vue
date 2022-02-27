@@ -11,6 +11,8 @@
 <style lang="scss" scoped>
 .ava-bal {
   color: $text;
+  padding: 0.5rem 0rem;
+  margin: 1.5rem 0rem;
   .ava-bal__details {
     display: flex;
     align-items: center;

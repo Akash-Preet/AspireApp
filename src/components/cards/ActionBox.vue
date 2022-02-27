@@ -1,6 +1,6 @@
 <template>
   <div class="action-item column justify-center">
-    <img class="btn--icon" src="~assets/icons/Freezecard.svg" svg-inline />
+    <img class="btn--icon" src="~assets/icons/Freezecard.svg" />
     <p class="btn--text">Freeze Card</p>
   </div>
 </template>

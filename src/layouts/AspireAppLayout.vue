@@ -8,7 +8,7 @@
       side="left"
     >
       <router-link to="/cards" class="app-logo">
-        <img src="~assets/app-full-logo.svg" svg-inline class="no-outline" />
+        <img src="~assets/app-full-logo.svg" class="no-outline" />
       </router-link>
       <p class="app-desc">
         Trusted way of banking for 3,000+ SMEs and startups in Singapore
@@ -23,40 +23,40 @@
       </q-list>
     </q-drawer>
 
-    <q-page-container>
+    <q-page-container class="app-page">
       <router-view />
     </q-page-container>
   </q-layout>
 </template>
 
 <script lang="ts">
-import AspireAppLink from 'src/components/AspireAppLink.vue';
-import { AppLink } from 'src/components/models';
+import { AppLink } from 'src/boot/models';
+import AspireAppLink from 'src/components/app_common/AspireAppLink.vue';
 
 const linksList = [
   {
     title: 'Home',
-    icon: 'assets/icons/Home.svg',
+    icon: 'Home.svg',
     route: '/home',
   },
   {
     title: 'Cards',
-    icon: './assets/icons/Card.svg',
+    icon: 'Card.svg',
     route: '/cards',
   },
   {
     title: 'Payments',
-    icon: 'assets/icons/Payments.svg',
+    icon: 'Payments.svg',
     route: '/payments',
   },
   {
     title: 'Credit',
-    icon: 'assets/icons/Credit.svg',
+    icon: 'Credit.svg',
     route: '/credit',
   },
   {
     title: 'Settings',
-    icon: 'assets/icons/Account.svg',
+    icon: 'Account.svg',
     route: '/settings',
   },
 ];
@@ -84,8 +84,20 @@ export default defineComponent({
   .app-sidebar {
     padding: 4.8rem;
   }
+  .app-logo {
+    padding: 0.5rem 0;
+  }
   .app-desc {
     font-size: 1.5rem;
+    color: $white;
+    opacity: 0.3;
+    padding: 0.5rem 0;
+  }
+  .app-links {
+    font-size: 1.6rem;
+  }
+  .app-page {
+    margin: 6rem;
   }
 }
 </style>
