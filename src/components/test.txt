@@ -1,0 +1,57 @@
+<template>
+  <div>
+    <p>{{ title }}</p>
+    <ul>
+      <li v-for="todo in todos" :key="todo.id" @click="increment">
+        {{ todo.id }} - {{ todo.content }}
+      </li>
+    </ul>
+    <p>count: {{ todocount }} / {{ meta.totalcount }}</p>
+    <p>active: {{ active ? 'yes' : 'no' }}</p>
+    <p>clicks on todos: {{ clickcount }}</p>
+  </div>
+</template>
+
+<script lang="ts">
+import { definecomponent, proptype, computed, ref, toref, ref } from 'vue';
+import { todo, meta } from './models';
+
+function useclickcount() {
+  const clickcount = ref(0);
+  function increment() {
+    clickcount.value += 1;
+    return clickcount.value;
+  }
+
+  return { clickcount, increment };
+}
+
+function usedisplaytodo(todos: ref<todo[]>) {
+  const todocount = computed(() => todos.value.length);
+  return { todocount };
+}
+
+export default definecomponent({
+  name: 'compositioncomponent',
+  props: {
+    title: {
+      type: string,
+      required: true,
+    },
+    todos: {
+      type: array as proptype<todo[]>,
+      default: () => [],
+    },
+    meta: {
+      type: object as proptype<meta>,
+      required: true,
+    },
+    active: {
+      type: boolean,
+    },
+  },
+  setup(props) {
+    return { ...useclickcount(), ...usedisplaytodo(toref(props, 'todos')) };
+  },
+});
+</script>

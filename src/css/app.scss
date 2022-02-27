@@ -1,0 +1,64 @@
+// app global css in SCSS form
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-Medium.ttf');
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-SemiBold.ttf');
+  font-weight: 600;
+}
+@font-face {
+  font-family: 'Open Sans';
+  src: url('../assets/fonts/OpenSans-Bold.ttf');
+  font-weight: 700;
+}
+
+p,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+label,
+textarea,
+span,
+li,
+body {
+  font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html {
+  font-size: 13px;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a {
+  /** reset default margin */
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.q-item.q-router-link--active,
+.q-item--active {
+  color: $secondary;
+}
