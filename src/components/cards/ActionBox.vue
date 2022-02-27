@@ -14,7 +14,7 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .action-item {
-  width: 35px;
+  width: 3.5rem;
 }
 .btn--text {
   text-align: center;

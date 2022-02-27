@@ -9,7 +9,7 @@
         navigation-position="bottom"
         navigation
         padding
-        height="300px"
+        height="30rem"
         class="bg-white text-black rounded-borders"
       >
         <q-carousel-slide name="style" class="column no-wrap flex-center">

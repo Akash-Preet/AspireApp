@@ -7,19 +7,6 @@
       </div>
       <div class="row">
         <div class="col-12">
-          <!-- <div class="q-pa-md">
-            <div class="q-gutter-y-md" style="max-width: 600px">
-              <q-tabs
-                v-model="tab"
-                inline-label
-                class="text-black"
-                align="left"
-              >
-                <q-tab name="my_debit_cards" label="My debit cards" />
-                <q-tab name="all_company_cards" label="All company cards" />
-              </q-tabs>
-            </div>
-          </div> -->
           <div class="q-pa-md">
             <div class="q-gutter-y-md">
               <q-card>

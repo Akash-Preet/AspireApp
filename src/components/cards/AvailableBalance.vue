@@ -10,14 +10,13 @@
 
 <style lang="scss" scoped>
 .ava-bal {
-  font-size: 13px;
   color: $text;
   .ava-bal__details {
     display: flex;
     align-items: center;
     .ava-bal__details--icon {
-      width: 40px;
-      line-height: 16px;
+      width: 4rem;
+      line-height: 1.6rem;
 
       background-color: $secondary;
       color: $white;
@@ -25,15 +24,15 @@
       text-align: center;
       font-weight: 700;
 
-      border-radius: 4px;
-      padding: 2px 13px 4px 13px;
+      border-radius: 0.4rem;
+      padding: 0.2rem 1.3rem 0.4rem 1.3rem;
     }
     .ava-bal__details--hero {
-      font-size: 26px;
+      font-size: 2.6rem;
       color: $text;
-      margin-left: 12px;
+      margin-left: 1.2rem;
       font-weight: 700;
-      line-height: 32px;
+      line-height: 3.2rem;
     }
   }
 }

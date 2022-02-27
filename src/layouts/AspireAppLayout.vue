@@ -79,10 +79,13 @@ export default defineComponent({
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
 .app-layout {
   .app-sidebar {
-    padding: 48px;
+    padding: 4.8rem;
+  }
+  .app-desc {
+    font-size: 1.5rem;
   }
 }
 </style>
