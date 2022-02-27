@@ -1,7 +1,7 @@
 {
   "Cards": [
     {
-      "user_id": "111",
+      "user_id": 111,
       "name": "Mark Henry",
       "number": "1234567812342020",
       "thruMonth": "11",
@@ -13,7 +13,7 @@
       "payment_network": "visa"
     },
     {
-      "user_id": "222",
+      "user_id": 222,
       "name": "Trang Aspire",
       "number": "2234567812342021",
       "thruMonth": "04",
@@ -25,7 +25,7 @@
       "payment_network": "visa"
     },
     {
-      "user_id": "777",
+      "user_id": 777,
       "name": "Akash Preet",
       "number": "7234567812342027",
       "thruMonth": "07",
@@ -37,9 +37,9 @@
       "payment_network": "visa"
     }
   ],
-  "Transactions": [
+  "transactions": [
     {
-      "id": "123",
+      "id": 123,
       "user_id": "111",
       "category": "Shopping",
       "trans_name": "Hamleys",
@@ -51,7 +51,7 @@
       "trans_msg": "Refund on debit card"
     },
     {
-      "id": "124",
+      "id": 124,
       "user_id": "111",
       "category": "Travel",
       "trans_name": "Hamleys",
@@ -63,7 +63,7 @@
       "trans_msg": "Charged to debit card"
     },
     {
-      "id": "125",
+      "id": 125,
       "user_id": "111",
       "category": "Other",
       "trans_name": "Hamleys",
@@ -75,7 +75,7 @@
       "trans_msg": "Charged to debit card"
     },
     {
-      "id": "125",
+      "id": 126,
       "user_id": "111",
       "category": "Shopping",
       "trans_name": "Hamleys",
