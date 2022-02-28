@@ -1,41 +1,53 @@
-# AspireApp (aspire-app)
+# Aspire App
 
-UI Development By Akash (akash.p96@gmail.com)
+## _UI Development Challenge_
 
-## Install the dependencies
+- [Deployment URL] - Working site hosted in render!
+- [GitHub URL] - Github
 
-```bash
-yarn
+## List of given task:
+
+[x] Add new card
+[x] Freeze/Unfreeze card
+[x] Cancel card
+
+## Must have:
+
+[x] Vue.js 2
+[x] Form validations
+[~] High design fidelity
+[~] Mobile version of the CSS challenge
+[x] A link to a public repository hosting the code (ex. GitHub/Bitbucket/GitLab)
+[x] A link to a hosted version of the app (e.g. using Netlify)
+[x] A README.md containing all the informations that the reviewers need to run and use the app
+
+## Recommended
+
+[~] Pixel perfect fidelity
+[x] SCSS
+[x] BEM or similar patterns
+[x] VueX
+[x] Vue Router
+[x] Vue.js 3
+[x] TypeScript
+[~] Desktop version of the CSS challenge with responsive UI
+
+# Local setup Instruction
+
+## Installation
+
+```sh
+$git clone https://github.com/Akash-Preet/AspireApp.git
+cd AspireApp
+npm install
+once done run $quasar dev or npm run dev
+App will open in the default browser
 ```
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
+# contact
 
-```bash
-quasar dev
-```
+Akash P - akash.p96@gmail.com
+website - https://akashpreet.in
 
-### Lint the files
-
-```bash
-yarn lint
-```
-
-### Format the files
-
-```bash
-yarn format
-```
-
-### Build the app for production
-
-```bash
-quasar build
-```
-
-### Customize the configuration
-
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
-
-### Use this beta json-server endpoint
-
-See [JSON Server API](https://my-json-server.typicode.com/Akash-Preet/AspireApp).
+[deployment url]: https://aspireapp.onrender.com/#/cards
+[github url]: https://github.com/Akash-Preet/AspireApp

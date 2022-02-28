@@ -166,14 +166,20 @@ export default defineComponent({
           });
         }
       } else if (action.onClick === 'cancel') {
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
-        activeCard = $store.getters['cardModule/getActiveCard'];
-        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-        void $store.dispatch('cardModule/deleteCard', activeCard);
-        $q.notify({
-          position: 'top',
-          type: 'negative',
-          message: 'Card Canceled.',
+        $q.dialog({
+          title: 'Attention',
+          message: 'Do you wish to cancel the card? This cannot be undone.',
+          cancel: true,
+        }).onOk(() => {
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
+          activeCard = $store.getters['cardModule/getActiveCard'];
+          // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+          void $store.dispatch('cardModule/deleteCard', activeCard);
+          $q.notify({
+            position: 'top',
+            type: 'negative',
+            message: 'Card Canceled.',
+          });
         });
       }
     };
