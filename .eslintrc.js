@@ -80,6 +80,8 @@ module.exports = {
     // TypeScript
     quotes: ['warn', 'single', { avoidEscape: true }],
     '@typescript-eslint/explicit-function-return-type': 'off',
+    // '@typescript-eslint/no-unsafe-member-access': 'off',
+    // '@typescript-eslint/no-unsafe-assignment': 'off',
 
     // allow debugger during development only
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',

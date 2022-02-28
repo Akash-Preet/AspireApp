@@ -1,6 +1,6 @@
 <template>
   <div class="debit-card">
-    <div class="q-pa-md">
+    <div class="q-pa-md debit-card__carousel">
       <q-carousel
         v-model="slide"
         swipeable
@@ -12,19 +12,14 @@
         height="30rem"
         class="bg-white text-black rounded-borders"
       >
-        <q-carousel-slide name="style" class="column no-wrap flex-center">
+        <q-carousel-slide
+          v-for="(card, index) in cards"
+          :key="card.user_id"
+          :name="index"
+          class="column no-wrap flex-center"
+        >
           <div class="q-mt-md">
-            <DebitCard />
-          </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="tv" class="column no-wrap flex-center">
-          <div class="q-mt-md">
-            <DebitCard />
-          </div>
-        </q-carousel-slide>
-        <q-carousel-slide name="layers" class="column no-wrap flex-center">
-          <div class="q-mt-md">
-            <DebitCard />
+            <DebitCard :card="card" />
           </div>
         </q-carousel-slide>
       </q-carousel>
@@ -32,21 +27,43 @@
   </div>
 </template>
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { Card } from 'src/boot/models';
+import { defineComponent, ref, PropType } from 'vue';
 import DebitCard from './DebitCard.vue';
 
 export default defineComponent({
+  props: {
+    cards: {
+      type: Array as PropType<Card[]>,
+      required: true,
+    },
+  },
   components: {
     DebitCard,
   },
   setup() {
-    return {
-      slide: ref('style'),
-      lorem:
-        'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Itaque voluptatem totam, architecto cupiditate officia rerum, error dignissimos praesentium libero ab nemo.',
-    };
+    let slide = ref(0);
+    return { slide };
   },
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss">
+.debit-card {
+  .debit-card__carousel {
+    .q-carousel__control {
+      top: 26.5rem;
+      .q-carousel__navigation-inner {
+        .q-btn-item {
+          font-size: 0.5rem !important;
+          margin: 0.3rem 0.2rem;
+          padding: 0.25rem;
+        }
+        .q-carousel__navigation-icon--active {
+          width: 10px;
+        }
+      }
+    }
+  }
+}
+</style>

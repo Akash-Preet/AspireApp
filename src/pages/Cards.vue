@@ -29,10 +29,10 @@
                 <q-tab-panel name="my_debit_cards">
                   <div class="text-h6">Debit card</div>
                   <div class="row">
-                    <div class="col-6">
+                    <div class="col-7">
                       <div class="row">
                         <div class="col-12">
-                          <DebitCardCarousel></DebitCardCarousel>
+                          <DebitCardCarousel :cards="cards"></DebitCardCarousel>
                         </div>
                         <div class="col-12">
                           <div class="row justify-between items-center">
@@ -45,7 +45,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-5">
                       <InformationBox></InformationBox>
                       <InformationBox></InformationBox>
                     </div>
@@ -72,6 +72,11 @@ import DebitCardCarousel from 'src/components/cards/DebitCardCarousel.vue';
 import InformationBox from 'src/components/cards/InformationBox.vue';
 import { defineComponent, ref } from 'vue';
 
+// import { Card } from 'src/boot/models';
+// import { cardsData } from 'boot/cards_data';
+
+import { useStore } from 'src/store';
+
 export default defineComponent({
   name: 'CardsPage',
   components: {
@@ -83,8 +88,14 @@ export default defineComponent({
   },
   setup() {
     const tab = ref('my_debit_cards');
-
-    return { tab };
+    const $store = useStore();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment,@typescript-eslint/no-unsafe-member-access
+    const cards = $store.getters['cardModule/getCards'];
+    // const cards = ref<Card[]>(cardsData);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+    const activeCard = $store.getters['cardModule/getActiveCard'];
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    return { tab, cards, activeCard };
   },
 });
 </script>

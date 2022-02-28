@@ -3,7 +3,8 @@
     <p>Available balance</p>
     <div class="ava-bal__details">
       <span class="ava-bal__details--icon">S$</span>
-      <p class="ava-bal__details--hero">3,000</p>
+      <!-- <p class="ava-bal__details--hero">3,000</p> -->
+      <p class="ava-bal__details--hero">{{ activeCard.balance }}</p>
     </div>
   </div>
 </template>
@@ -41,7 +42,46 @@
 </style>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
+import { useStore } from 'src/store';
 
-export default defineComponent({});
+// import { Card } from 'src/boot/models';
+
+export default defineComponent({
+  setup() {
+    const $store = useStore();
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+    let activeCard = ref($store.getters['cardModule/getActiveCard']);
+
+    // watch(
+    //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return
+    //   () => $store.getters['cardModule/getActiveCard'],
+    //   function () {
+    //     console.log('value changes detected');
+    //   }
+    // );
+
+    // $store.watch(
+    //   // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return
+    //   (state, getters) => getters['cardModule/getActiveCard'],
+    //   () => {
+    //     console.log('value changes detected via vuex watch');
+    //   }
+    // );
+
+    $store.watch(
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-return
+      (state, getters) => getters['cardModule/getActiveCard'],
+      () => {
+        console.log('value changes detected via vuex watch');
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
+        activeCard.value = $store.getters['cardModule/getActiveCard'];
+      }
+    );
+
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    return { activeCard };
+  },
+});
 </script>

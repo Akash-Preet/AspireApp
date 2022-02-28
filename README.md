@@ -35,3 +35,7 @@ quasar build
 ### Customize the configuration
 
 See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+
+### Use this beta json-server endpoint
+
+See [JSON Server API](https://my-json-server.typicode.com/Akash-Preet/AspireApp).

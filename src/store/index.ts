@@ -9,6 +9,9 @@ import {
 // import example from './module-example'
 // import { ExampleStateInterface } from './module-example/state';
 
+import cardModule from './card-module';
+import { CardStateInterface } from './card-module/state';
+
 /*
  * If not building with SSR mode, you can
  * directly export the Store instantiation;
@@ -22,7 +25,7 @@ export interface StateInterface {
   // Define your own store structure, using submodules if needed
   // example: ExampleStateInterface;
   // Declared as unknown to avoid linting issue. Best to strongly type as per the line above.
-  example: unknown;
+  card: CardStateInterface;
 }
 
 // provide typings for `this.$store`
@@ -40,6 +43,7 @@ export default store(function (/* { ssrContext } */) {
   const Store = createStore<StateInterface>({
     modules: {
       // example
+      cardModule,
     },
 
     // enable strict mode (adds overhead!)

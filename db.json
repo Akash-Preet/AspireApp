@@ -1,5 +1,5 @@
 {
-  "Cards": [
+  "cards": [
     {
       "user_id": 111,
       "name": "Mark Henry",
@@ -8,7 +8,7 @@
       "thruYear": 2020,
       "cvv": 123,
       "isFreezed": false,
-      "balance": 3000,
+      "balance": "3,000",
       "type": "debit",
       "payment_network": "visa"
     },
@@ -20,7 +20,7 @@
       "thruYear": 2021,
       "cvv": 423,
       "isFreezed": false,
-      "balance": 7000,
+      "balance": "78,000",
       "type": "debit",
       "payment_network": "visa"
     },
@@ -32,7 +32,7 @@
       "thruYear": 2027,
       "cvv": 771,
       "isFreezed": true,
-      "balance": 2000,
+      "balance": "2,000",
       "type": "debit",
       "payment_network": "visa"
     }
