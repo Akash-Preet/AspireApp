@@ -1,5 +1,9 @@
 <template>
-  <q-item clickable :to="appLinks.route" class="link flex items-center no-wrap">
+  <q-item
+    clickable
+    :to="appLinks.route"
+    class="link flex items-center no-wrap q-my-xl"
+  >
     <q-item-section v-if="appLinks.icon" avatar class="link__img">
       <!-- <q-icon class="text-dark" size="lg">
         <img src="~assets/icons/Card.svg" />
