@@ -126,8 +126,6 @@ export default defineComponent({
     };
 
     const addCard = (card: Card) => {
-      debugger;
-      console.log(card);
       try {
         void $store.dispatch('cardModule/addCard', card);
         alert.value = false;
@@ -148,8 +146,6 @@ export default defineComponent({
       }
     };
     const fireTriggerEvent = (action: Action): void => {
-      console.log(action);
-      debugger;
       if (action.onClick === 'freeze') {
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access, @typescript-eslint/no-unsafe-assignment
         activeCard = $store.getters['cardModule/getActiveCard'];

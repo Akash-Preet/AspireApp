@@ -14,7 +14,6 @@ const mutation: MutationTree<CardStateInterface> = {
     return state.cards;
   },
   removeCard(state: CardStateInterface, payload: Card) {
-    debugger;
     // state.cards = state.cards.filter((card) => {
     //   return card.user_id !== payload.user_id;
     // });
@@ -31,7 +30,6 @@ const mutation: MutationTree<CardStateInterface> = {
   },
 
   freezeCard(state: CardStateInterface, payload: Card) {
-    debugger;
     state.cards.forEach((card) => {
       if (card.user_id === payload.user_id) {
         card.isFreezed = !card.isFreezed;

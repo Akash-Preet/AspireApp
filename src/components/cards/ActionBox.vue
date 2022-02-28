@@ -25,8 +25,6 @@ export default defineComponent({
   },
   setup(props, context) {
     const triggerEvent = (event: Action) => {
-      console.log(event);
-      debugger;
       context.emit('triggerEvent', event);
     };
 

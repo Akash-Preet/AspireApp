@@ -13,11 +13,9 @@ const actions: ActionTree<CardStateInterface, StateInterface> = {
     context.commit('setCard', payload);
   },
   deleteCard(context, payload) {
-    debugger;
     context.commit('removeCard', payload);
   },
   updateFreezeCard(context, payload) {
-    debugger;
     context.commit('freezeCard', payload);
   },
 };
