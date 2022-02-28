@@ -1,5 +1,22 @@
 <template>
-  <div class="debit-card bg-secondary">
+  <div class="row debit-card__visiblity">
+    <div
+      class="col-12 flex no-wrap items-center justify-end text-secondary debit-card__visiblity--text"
+      @click="toggleCardNumber = !toggleCardNumber"
+    >
+      <q-icon
+        :name="toggleCardNumber ? 'visibility_off' : 'visibility'"
+        class="cursor-pointer action-btn-text"
+      />
+      <p class="action-btn-text q-ml-xs">
+        {{ toggleCardNumber ? 'Hide card number' : 'Show card number' }}
+      </p>
+    </div>
+  </div>
+  <div
+    class="debit-card"
+    :class="card.isFreezed ? 'bg-primary' : 'bg-secondary'"
+  >
     <div class="row">
       <div class="col-12 q-py-sm debit-card__logo--color">
         <!-- <img src="~assets/app-full-logo.svg" /> -->
@@ -23,10 +40,19 @@
       <div class="col-12 q-py-md debit-card__name">{{ card.name }}</div>
       <q-space />
 
-      <div class="col-12 q-py-md debit-card__number">
+      <div v-if="toggleCardNumber" class="col-12 q-py-md debit-card__number">
         {{ card.number.match(/.{1,4}/g).join(' ') }}
       </div>
-      <div class="col-12 debit-card__thru">
+      <div v-else class="col-12 q-py-md debit-card__number">
+        <!-- {{ `0000 0000 0000 ${card.number.substring(12, 16)}` }} -->
+        {{
+          `&#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF; &#x25CF;&#x25CF;&#x25CF;&#x25CF;  ${card.number.substring(
+            12,
+            16
+          )}`
+        }}
+      </div>
+      <div v-if="!toggleCardNumber" class="col-12 debit-card__thru">
         <div class="row">
           <div class="col-4">
             Thru:{{ ` ${card.thruMonth}/${card.thruYear}` }}
@@ -34,6 +60,17 @@
           <div class="col-4 flex">
             <p>CVV:</p>
             <p class="debit-card__thru--cvv q-pl-sm">***</p>
+          </div>
+        </div>
+      </div>
+      <div v-else class="col-12 debit-card__thru">
+        <div class="row">
+          <div class="col-4">
+            Thru:{{ ` ${card.thruMonth}/${card.thruYear}` }}
+          </div>
+          <div class="col-4 flex">
+            <p>CVV:</p>
+            <p class="debit-card__thru--cvv-show q-pl-sm">123</p>
           </div>
         </div>
       </div>
@@ -57,7 +94,7 @@
 </template>
 <script lang="ts">
 import { Card } from 'src/boot/models';
-import { defineComponent, PropType, watchEffect } from 'vue';
+import { defineComponent, PropType, watchEffect, ref } from 'vue';
 import { useStore } from 'src/store';
 
 export default defineComponent({
@@ -69,18 +106,25 @@ export default defineComponent({
   },
   setup(props) {
     const $store = useStore();
+    const toggleCardNumber = ref(false);
+
     watchEffect(() => {
       console.log(props.card);
       void $store.dispatch('cardModule/changeActiveCard', props.card);
     });
+
+    return { toggleCardNumber };
   },
 });
 </script>
 
 <style lang="scss" scoped>
+.debit-card__visiblity--text {
+  cursor: pointer;
+  font-size: 1.4rem;
+  padding-bottom: 0.6rem;
+}
 .debit-card {
-  width: 41.4rem;
-  height: 24.9rem;
   max-width: 41.4rem;
   max-height: 24.9rem;
   border-radius: 0.8rem;
@@ -109,11 +153,18 @@ export default defineComponent({
   }
   .debit-card__thru {
     font-size: 1.3rem;
+    min-height: 3.6rem;
     .debit-card__thru--cvv {
       font-size: 2.4rem;
       font-weight: 600;
       position: relative;
       top: -0.5rem;
+    }
+    .debit-card__thru--cvv-show {
+      font-size: 2.4rem;
+      font-weight: 600;
+      position: relative;
+      top: -1rem;
     }
   }
   .debit-card__network--img {

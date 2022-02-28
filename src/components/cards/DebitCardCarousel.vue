@@ -52,7 +52,7 @@ export default defineComponent({
 .debit-card {
   .debit-card__carousel {
     .q-carousel__control {
-      top: 26.5rem;
+      top: 27.6rem;
       .q-carousel__navigation-inner {
         .q-btn-item {
           font-size: 0.5rem !important;

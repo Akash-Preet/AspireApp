@@ -1,11 +1,12 @@
 <template>
-  <div class="q-pa-md" style="max-width: 35rem">
+  <div class="q-pa-md info-box__accordian">
     <q-list bordered class="rounded-borders">
       <q-expansion-item
         expand-separator
         icon="perm_identity"
-        label="Account settings"
-        caption="John Doe"
+        label="Card Details"
+        :disable="off"
+        class="info-box__accordian--item"
       >
         <q-card>
           <q-card-section>
@@ -23,8 +24,18 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  components: {},
+  props: ['off'],
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.info-box__accordian {
+  max-width: 35rem;
+}
+.info-box__accordian--item {
+  background: #f5f9ff;
+  border: 0.1rem solid #f5f5f5;
+  font-size: 1.4rem;
+  color: $primary;
+}
+</style>

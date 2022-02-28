@@ -1329,6 +1329,11 @@
   dependencies:
     "@types/node" "*"
 
+"@types/uuid@^8.3.4":
+  "integrity" "sha512-c/I8ZRb51j+pYGAu5CrFMRxqZ2ke4y2grEBO5AUjgSkSk+qT2Ea+OdWElz/OiMf5MNpn2b17kuVBwZLQJXzihw=="
+  "resolved" "https://registry.npmjs.org/@types/uuid/-/uuid-8.3.4.tgz"
+  "version" "8.3.4"
+
 "@types/webpack-bundle-analyzer@4.4.1":
   "integrity" "sha512-yQAj3l7bIYL+QRRlNJt6gyP+zrXZOlgaR4wsX0WY4yzZIbv41ZibREfZvuYjxY0iVtvQQlbhx0AeokkCuqUAQg=="
   "resolved" "https://registry.npmjs.org/@types/webpack-bundle-analyzer/-/webpack-bundle-analyzer-4.4.1.tgz"

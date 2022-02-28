@@ -1,22 +1,50 @@
 <template>
-  <div class="action-item column justify-center">
-    <img class="btn--icon" src="~assets/icons/Freezecard.svg" />
-    <p class="btn--text">Freeze Card</p>
-  </div>
+  <q-item
+    class="action column justify-center items-center no-wrap"
+    clickable
+    v-ripple
+    @click="triggerEvent(action)"
+  >
+    <q-img
+      class="action-item"
+      :src="require(`../../assets/icons/${action.icon}`)"
+    />
+    <p class="btn--text">{{ action.label }}</p>
+  </q-item>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { Action } from 'src/boot/models';
+import { defineComponent, PropType } from 'vue';
 
 export default defineComponent({
-  components: {},
+  props: {
+    action: {
+      type: Object as PropType<Action>,
+      required: true,
+    },
+  },
+  setup(props, context) {
+    const triggerEvent = (event: Action) => {
+      console.log(event);
+      debugger;
+      context.emit('triggerEvent', event);
+    };
+
+    return { triggerEvent };
+  },
 });
 </script>
 
 <style lang="scss" scoped>
-.action-item {
-  width: 3.5rem;
-}
-.btn--text {
-  text-align: center;
+.action {
+  padding: 0rem;
+  .action-item {
+    max-width: 3.5rem;
+    text-align: center;
+  }
+  .btn--text {
+    text-align: center;
+    font-size: 1.3rem;
+  }
 }
 </style>

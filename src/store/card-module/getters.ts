@@ -12,6 +12,12 @@ const getters: GetterTree<CardStateInterface, StateInterface> = {
   getActiveCard(context) {
     return context.activeCard;
   },
+  getActions(context) {
+    return context.actions;
+  },
+  getTransaction(context) {
+    return context.transaction;
+  },
 };
 
 export default getters;

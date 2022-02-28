@@ -16,3 +16,22 @@ export interface Card {
   type: string;
   payment_network: string;
 }
+
+export interface Action {
+  icon: string;
+  label: string;
+  onClick: string;
+}
+
+export interface Transaction {
+  id: number;
+  user_id: string;
+  category: string;
+  trans_name: string;
+  trans_desc: string;
+  trans_amount: string;
+  trans_currency: string;
+  isCredited: boolean;
+  date: string;
+  trans_msg: string;
+}

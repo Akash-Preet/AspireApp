@@ -9,6 +9,17 @@ const actions: ActionTree<CardStateInterface, StateInterface> = {
   changeActiveCard(context, payload) {
     context.commit('setActiveCard', payload);
   },
+  addCard(context, payload) {
+    context.commit('setCard', payload);
+  },
+  deleteCard(context, payload) {
+    debugger;
+    context.commit('removeCard', payload);
+  },
+  updateFreezeCard(context, payload) {
+    debugger;
+    context.commit('freezeCard', payload);
+  },
 };
 
 export default actions;
