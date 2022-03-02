@@ -10,7 +10,7 @@
         navigation
         padding
         height="30rem"
-        class="bg-white text-black rounded-borders"
+        class="text-black rounded-borders debit-card__carousel--div"
       >
         <q-carousel-slide
           v-for="(card, index) in cards"
@@ -51,6 +51,11 @@ export default defineComponent({
 <style lang="scss">
 .debit-card {
   .debit-card__carousel {
+    .debit-card__carousel--div {
+      @media screen and (max-width: $breakpoint-xs-max) {
+        background: $primary;
+      }
+    }
     .q-carousel__control {
       top: 27.6rem;
       .q-carousel__navigation-inner {

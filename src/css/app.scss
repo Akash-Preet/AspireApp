@@ -58,7 +58,10 @@ html {
   font-size: 10px;
 }
 body {
-  min-width: 41.4rem;
+  min-width: 46rem;
+  @media screen and (max-width: $breakpoint-xs-max) {
+    background-color: $primary;
+  }
 }
 
 .q-item.q-router-link--active,

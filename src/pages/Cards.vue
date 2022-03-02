@@ -8,7 +8,7 @@
         <AvailableBalance></AvailableBalance>
         <BaseButton @click="openDialog">New card</BaseButton>
       </div>
-      <div class="row" style="margin-top: 1.5rem">
+      <div class="row tabs__bg" style="margin-top: 1.5rem">
         <div class="col-12" v-if="cards.length > 0">
           <div class="q-gutter-y-md">
             <q-tabs
@@ -211,6 +211,12 @@ export default defineComponent({
   @media screen and (max-width: $breakpoint-xs-max) {
   }
 }
+.tabs__bg {
+  @media screen and (max-width: $breakpoint-xs-max) {
+    background: #0c365a;
+  }
+}
+
 .cards__tabs {
   width: fit-content;
 
@@ -253,10 +259,16 @@ export default defineComponent({
   @media screen and (max-width: $breakpoint-xs-max) {
     box-shadow: none;
     border-radius: 0px;
+    background: #0c365a;
   }
 }
 .cards__bg {
   @media screen and (max-width: $breakpoint-xs-max) {
+  }
+}
+.debit-card__carousel--slide {
+  @media screen and (max-width: $breakpoint-xs-max) {
+    background: #0c365a;
   }
 }
 .action-tab {
