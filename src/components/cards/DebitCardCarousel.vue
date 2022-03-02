@@ -64,6 +64,10 @@ export default defineComponent({
         }
       }
     }
+    @media screen and (max-width: $breakpoint-xs-max) {
+      padding: 0px;
+      width: 100%;
+    }
   }
 }
 </style>

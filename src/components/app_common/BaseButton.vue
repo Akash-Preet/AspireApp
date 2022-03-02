@@ -22,6 +22,10 @@ export default defineComponent({});
 .btn--color {
   background: $btn-primary;
   color: $white;
+  @media screen and (max-width: $breakpoint-xs-max) {
+    background: #23cefd00;
+    color: #23cefd;
+  }
 }
 .btn--text {
   margin-left: 0.8rem;

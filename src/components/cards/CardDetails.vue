@@ -31,7 +31,14 @@ export default defineComponent({
 <style lang="scss" scoped>
 .info-box__accordian {
   max-width: 35rem;
+  @media screen and (max-width: $breakpoint-xs-max) {
+    max-width: 41.4rem;
+    margin: 0px auto;
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
+
 .info-box__accordian--item {
   background: #f5f9ff;
   border: 0.1rem solid #f5f5f5;

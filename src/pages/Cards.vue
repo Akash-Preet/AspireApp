@@ -32,14 +32,14 @@
                 animated
                 class="bg-white text-black cards__tab-panels"
               >
-                <q-tab-panel name="my_debit_cards">
-                  <div class="row">
-                    <div class="col-7">
+                <q-tab-panel name="my_debit_cards" class="cards__tab-panel">
+                  <div class="row cards__bg--row">
+                    <div class="col-xs-12 col-sm-7 col-7 cards__bg">
                       <div class="row justify-center items-center">
-                        <div class="col-12">
+                        <div class="col-xs-12 col-sm-12 col-7">
                           <DebitCardCarousel :cards="cards"></DebitCardCarousel>
                         </div>
-                        <div class="col-12 action-tab">
+                        <div class="col-xs-12 col-sm-12 col-7 action-tab">
                           <div class="row justify-between items-center no-wrap">
                             <ActionBox
                               v-for="(action, index) in actions"
@@ -51,7 +51,7 @@
                         </div>
                       </div>
                     </div>
-                    <div class="col-5 info-box">
+                    <div class="col-xs-12 col-sm-5 col-5 info-box">
                       <CardDetails :off="true"></CardDetails>
                       <RecentTransactions :off="false"></RecentTransactions>
                     </div>
@@ -207,6 +207,10 @@ export default defineComponent({
   margin: 0 auto;
   max-width: 90.6rem;
 }
+.cards__header {
+  @media screen and (max-width: $breakpoint-xs-max) {
+  }
+}
 .cards__tabs {
   width: fit-content;
 
@@ -234,15 +238,35 @@ export default defineComponent({
           color: $text;
         }
       }
+      @media screen and (max-width: $breakpoint-xs-max) {
+        color: $white;
+      }
     }
+  }
+}
+.cards__tab-panel {
+  @media screen and (max-width: $breakpoint-xs-max) {
+    padding: 0px;
+  }
+}
+.cards__bg--row {
+  @media screen and (max-width: $breakpoint-xs-max) {
+    box-shadow: none;
+    border-radius: 0px;
+  }
+}
+.cards__bg {
+  @media screen and (max-width: $breakpoint-xs-max) {
   }
 }
 .action-tab {
   background: #edf3ff !important;
   border-radius: 1.6rem;
   font-size: 1.3rem;
-  max-width: 41.4rem;
-  max-height: 11.6rem;
+  width: 41.4rem;
+  height: 11.6rem;
+  min-width: 41.4rem;
+  min-height: 11.6rem;
   padding: 2rem 2.7rem;
 }
 </style>

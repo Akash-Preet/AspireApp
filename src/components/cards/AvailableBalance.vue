@@ -14,6 +14,9 @@
   color: $text;
   padding: 0.5rem 0rem;
   margin: 1.5rem 0rem;
+  @media screen and (max-width: $breakpoint-xs-max) {
+    color: $white;
+  }
   .ava-bal__details {
     display: flex;
     align-items: center;
@@ -36,6 +39,9 @@
       margin-left: 1.2rem;
       font-weight: 700;
       line-height: 3.2rem;
+      @media screen and (max-width: $breakpoint-xs-max) {
+        color: $white;
+      }
     }
   }
 }

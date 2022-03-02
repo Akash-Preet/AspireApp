@@ -96,9 +96,14 @@ export default defineComponent({
 
 <style lang="scss">
 .app-layout {
+  @media screen and (max-width: $breakpoint-xs-max) {
+    background: $primary;
+    color: $white;
+  }
   .app-sidebar {
     padding: 4.8rem;
   }
+
   .app-logo {
     padding: 0.5rem 0;
     svg {
@@ -118,6 +123,16 @@ export default defineComponent({
   }
   .app-page {
     margin: 6rem;
+
+    @media screen and (max-width: $breakpoint-xs-max) {
+      margin: 2.1rem;
+    }
+  }
+  .app-layout-footer {
+    display: none;
+    @media (max-width: $breakpoint-xs-max) {
+      display: flex;
+    }
   }
 }
 </style>

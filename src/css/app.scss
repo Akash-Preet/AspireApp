@@ -40,10 +40,6 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-html {
-  font-size: 10px;
-}
-
 p,
 h1,
 h2,
@@ -56,6 +52,13 @@ a {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+body {
+  min-width: 41.4rem;
 }
 
 .q-item.q-router-link--active,

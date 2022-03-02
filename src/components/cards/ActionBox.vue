@@ -1,15 +1,15 @@
 <template>
   <q-item
-    class="action column justify-center items-center no-wrap"
+    class="action-tab__item column justify-center items-center no-wrap"
     clickable
     v-ripple
     @click="triggerEvent(action)"
   >
     <q-img
-      class="action-item"
+      class="action-tab__img"
       :src="require(`../../assets/icons/${action.icon}`)"
     />
-    <p class="btn--text">{{ action.label }}</p>
+    <p class="action-tab__text">{{ action.label }}</p>
   </q-item>
 </template>
 <script lang="ts">
@@ -34,13 +34,14 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-.action {
+.action-tab__item {
   padding: 0rem;
-  .action-item {
+  max-width: 6.5rem;
+  .action-tab__img {
     max-width: 3.5rem;
     text-align: center;
   }
-  .btn--text {
+  .action-tab__text {
     text-align: center;
     font-size: 1.3rem;
   }

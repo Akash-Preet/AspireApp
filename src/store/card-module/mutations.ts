@@ -8,6 +8,11 @@ const mutation: MutationTree<CardStateInterface> = {
   // },
   setActiveCard(state: CardStateInterface, payload: Card) {
     state.activeCard = payload;
+    if (state.activeCard.isFreezed) {
+      state.actions[0].label = 'Unfreeze card';
+    } else {
+      state.actions[0].label = 'Freeze card';
+    }
   },
   setCard(state: CardStateInterface, payload: Card) {
     state.cards.push(payload);

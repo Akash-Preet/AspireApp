@@ -125,12 +125,13 @@ export default defineComponent({
   padding-bottom: 0.6rem;
 }
 .debit-card {
-  max-width: 41.4rem;
-  max-height: 24.9rem;
+  width: 41.4rem;
+  height: 24.9rem;
+  min-width: 41.4rem;
+  min-height: 24.9rem;
   border-radius: 0.8rem;
   padding: 2.5rem;
   color: $white;
-
   .debit-card__logo--color {
     svg {
       width: 8.352rem;
